@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Home } from "../pages/Home/Home";
 import Shop from "../pages/Shop/Shop";
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/book/:id",
         element: <SignleBook />,
-        loader: ({ params }) => fetch(`http://localhost:5000/book/${params.id}`)
+        loader: ({ params }) => fetch(`https://book-server-chi.vercel.app/book/${params.id}`)
       },
       {
         path: "/about",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       { path: "/admin/dashboard/upload", element: <UploadBook /> },
       { path: "/admin/dashboard/manage", element: <ManageBooks /> },
       { path: "/admin/dashboard/edit-books/:id", element: <EditBooks />,
-      loader: ({ params }) => fetch(`http://localhost:5000/book/${params.id}`)
+      loader: ({ params }) => fetch(`https://book-server-chi.vercel.app/book/${params.id}`)
     },
     ],
   },

@@ -45,7 +45,7 @@
 
 //   useEffect(() => {
 //     // Fetch images from the server
-//     axios.get('http://localhost:5000/all-books')
+//     axios.get('https://book-server-chi.vercel.app/all-books')
 //       .then(response => {
 //         // Extract image URLs from the response data
 //         const imageUrls = response.data.map(book => book.imageURL);
@@ -94,7 +94,7 @@ function BannerCard() {
 
   const fetchImageUrls = async () => {
     try {
-      const response = await fetch('http://localhost:5000/all-books');
+      const response = await fetch('https://book-server-chi.vercel.app/all-books');
       if (response.ok) {
         const data = await response.json();
         // Extract image URLs from the response data

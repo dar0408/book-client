@@ -1,13 +1,19 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAAKzVGY1aa052ar0plwftC7dvazvFGfqs",
-  authDomain: "mern-book-inventory-38d05.firebaseapp.com",
-  projectId: "mern-book-inventory-38d05",
-  storageBucket: "mern-book-inventory-38d05.appspot.com",
-  messagingSenderId: "519604910793",
-  appId: "1:519604910793:web:3beac4e97face2ac9b2b18"
+  apiKey: "AIzaSyBrESmF85Oo_XpYFf75OTzFipm91uhBclk",
+  authDomain: "book-shelf-7b33e.firebaseapp.com",
+  projectId: "book-shelf-7b33e",
+  storageBucket: "book-shelf-7b33e.appspot.com",
+  messagingSenderId: "77306232175",
+  appId: "1:77306232175:web:81f0af2605b9c828bcfc9a"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 export default app;

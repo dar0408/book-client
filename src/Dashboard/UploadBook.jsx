@@ -43,6 +43,7 @@ const UploadBook = () => {
     const category = form.categoryName.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
+    const price = form.price.value; // New field for price
 
     const bookObj = {
       bookTitle,
@@ -51,11 +52,12 @@ const UploadBook = () => {
       category,
       bookDescription,
       bookPDFURL,
+      price, // Include price in the book object
     };
 
-    console.log("Submitting book data:", bookObj); // Add console log here
+    console.log("Submitting book data:", bookObj);
 
-    fetch("https://book-server-chi.vercel.app/upload-book", {
+    fetch("http://localhost:5000/upload-book", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -63,20 +65,20 @@ const UploadBook = () => {
       body: JSON.stringify(bookObj),
     })
       .then((res) => {
-        console.log("Server response:", res); // Add console log here
+        console.log("Server response:", res);
         if (!res.ok) {
           throw new Error(`Network response was not ok: ${res.statusText}`);
         }
         return res.json();
       })
       .then((data) => {
-        console.log("Server data:", data); // Add console log here
+        console.log("Server data:", data);
         alert("Book uploaded successfully!");
         form.reset();
         setErrorMessage(null);
       })
       .catch((error) => {
-        console.error("Error during fetch:", error); // Add console log here
+        console.error("Error during fetch:", error);
         setErrorMessage(`Failed to upload book: ${error.message}`);
       });
   };
@@ -161,33 +163,52 @@ const UploadBook = () => {
 
         </div>
 
-        {/* full width div for book description */}
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="bookDescription" value="Book Description" />
+        {/* 3rd Row */}
+        <div className='flex gap-8'>
+          {/* full width div for book description */}
+          <div className='lg:w-1/2'>
+            <div className="mb-2 block">
+              <Label htmlFor="bookDescription" value="Book Description" />
+            </div>
+            <Textarea
+              id="bookDescription"
+              placeholder="Book Description"
+              required
+              type="text"
+              name='bookDescription'
+              className='w-full'
+              rows={4}
+            />
           </div>
-          <Textarea
-            id="bookDescription"
-            placeholder="Book Description"
-            required
-            type="text"
-            name='bookDescription'
-            className='w-full'
-            rows={4}
-          />
+
+          {/* book pdf url */}
+          <div className='lg:w-1/2'>
+            <div className="mb-2 block">
+              <Label htmlFor="bookPDFURL" value="Book PDF Link" />
+            </div>
+            <TextInput
+              id="bookPDFURL"
+              placeholder="Paste Book PDF URL here"
+              required
+              type="text"
+              name='bookPDFURL'
+              className='w-full'
+            />
+          </div>
         </div>
 
-        {/* book pdf url */}
-        <div>
+        {/* 4th Row */}
+        <div className='lg:w-1/2'>
           <div className="mb-2 block">
-            <Label htmlFor="bookPDFURL" value="Book PDF Link" />
+            <Label htmlFor="price" value="Book Price" />
           </div>
           <TextInput
-            id="bookPDFURL"
-            placeholder="Paste Book PDF URL here"
+            id="price"
+            placeholder="Book Price (e.g., 19.99)"
             required
-            type="text"
-            name='bookPDFURL'
+            type="number"
+            step="0.01"
+            name='price'
             className='w-full'
           />
         </div>

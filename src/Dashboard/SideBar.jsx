@@ -1,25 +1,25 @@
 
 import { Sidebar } from 'flowbite-react';
 import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiSupport, HiTable, HiUser, HiViewBoards, HiOutlineCloudUpload } from 'react-icons/hi';
-import img from '../../src/assets/profile.jpg'
-import { Link } from 'react-router-dom';
+import img from '../../src/assets/profile.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 import MobileDashboard from './MobileDashboard';
 
 const SideBar = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+
   return (
     <div className=''>
       <Sidebar aria-label="Sidebar with content separator example" className='hidden md:block'>
         <Sidebar.Logo
           href="/"
-          img={ img}
+          img={img}
           className='w-10 h-10 rounded-full'
-          imgAlt="Flowbite logo"
+          imgAlt="User profile"
         >
           <p>
-            {user?.displayName || "Demo User" }
+            {user?.displayName || "Demo User"}
           </p>
         </Sidebar.Logo>
         <Sidebar.Items>
@@ -45,7 +45,7 @@ const SideBar = () => {
               icon={HiInbox}
             >
               <p>
-                ManageBooks
+                Manage Books
               </p>
             </Sidebar.Item>
             <Sidebar.Item
@@ -110,10 +110,10 @@ const SideBar = () => {
         </Sidebar.Items>
       </Sidebar>
       <div className='md:hidden'>
-          <MobileDashboard/>
+        <MobileDashboard />
       </div>
     </div>
-  )
+  );
 }
 
-export default SideBar
+export default SideBar;

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ManageBooks = () => {
     const [allBooks, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch(`https://d-server-silk.vercel.app//all-books`)
+        fetch(`http://localhost:5000//all-books`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
@@ -17,7 +17,7 @@ const ManageBooks = () => {
     // delete a books
     const handleDelete = (id) => {
         // console.log(id)
-        fetch(`https://d-server-silk.vercel.app//book/${id}`, {
+        fetch(`http://localhost:5000//book/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

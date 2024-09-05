@@ -228,7 +228,7 @@ const SingleBook = () => {
         }
 
         const fetchReviews = async () => {
-            const response = await fetch(`http://localhost:5000/book/${_id}/reviews`);
+            const response = await fetch(`https://book-server-chi.vercel.app/book/${_id}/reviews`);
             const reviewsData = await response.json();
             setReviews(reviewsData);
         };
@@ -265,7 +265,7 @@ const SingleBook = () => {
             setIsEditing(false);
             setEditIndex(null);
         } else {
-            const response = await fetch(`http://localhost:5000/book/${_id}/review`, {
+            const response = await fetch(`https://book-server-chi.vercel.app/book/${_id}/review`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -293,7 +293,7 @@ const SingleBook = () => {
 
     const handleDelete = async (index) => {
         const reviewId = reviews[index]._id; // Assuming each review has a unique ID from the database
-        const response = await fetch(`http://localhost:5000/book/${_id}/review/${reviewId}`, {
+        const response = await fetch(`https://book-server-chi.vercel.app/book/${_id}/review/${reviewId}`, {
             method: 'DELETE',
         });
 

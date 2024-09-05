@@ -115,7 +115,7 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await fetch('http://localhost:5000/all-books');
+//       const response = await fetch('https://book-server-chi.vercel.app/all-books');
 //       if (response.ok) {
 //         const data = await response.json();
 //         setBooks(data);
@@ -193,7 +193,7 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await fetch('http://localhost:5000/all-books');
+//       const response = await fetch('https://book-server-chi.vercel.app/all-books');
 //       if (response.ok) {
 //         const data = await response.json();
 //         setBooks(data);
@@ -273,7 +273,7 @@ export const Banner = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:5000/all-books');
+      const response = await fetch('https://book-server-chi.vercel.app/all-books');
       if (response.ok) {
         const data = await response.json();
         setBooks(data);

@@ -57,7 +57,7 @@ const UploadBook = () => {
 
     console.log("Submitting book data:", bookObj);
 
-    fetch("http://localhost:5000/upload-book", {
+    fetch("https://book-server-chi.vercel.app/upload-book", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

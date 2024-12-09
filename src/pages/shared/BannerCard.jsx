@@ -17,7 +17,7 @@
 
 //   const fetchImageUrls = async () => {
 //     try {
-//       const response = await fetch('https://book-server-chi.vercel.app/all-books');
+//       const response = await fetch('https://book-server-w9qu.onrender.com/all-books');
 //       if (response.ok) {
 //         const data = await response.json();
 //         // Extract image URLs from the response data
@@ -77,7 +77,7 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await fetch('https://book-server-chi.vercel.app/all-books');
+//       const response = await fetch('https://book-server-w9qu.onrender.com/all-books');
 //       if (response.ok) {
 //         const data = await response.json();
 //         setBooks(data);
@@ -141,7 +141,7 @@
 
 //   const fetchBooks = async () => {
 //     try {
-//       const response = await fetch('https://book-server-chi.vercel.app/all-books');
+//       const response = await fetch('https://book-server-w9qu.onrender.com/all-books');
 //       if (response.ok) {
 //         const data = await response.json();
 //         setBooks(data);

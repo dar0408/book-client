@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ManageBooks = () => {
     const [allBooks, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch(`https://book-server-chi.vercel.app/all-books`)
+        fetch(`https://book-server-w9qu.onrender.com/all-books`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

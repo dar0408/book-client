@@ -7,7 +7,7 @@ export default function Shop() {
   const [books, setBooks] = useState([]);
 // fetching data
   useEffect(() =>{
-    fetch('https://book-server-chi.vercel.app/all-books')
+    fetch('https://book-server-w9qu.onrender.com/all-books')
     .then(res => res.json())
     .then(data => setBooks(data))
   }, [loading]);
